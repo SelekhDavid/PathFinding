@@ -234,10 +234,10 @@ function showPath() {
   for (var i = 15; i > 0; i--) {
     for (var j = 14; j > 0; j--) {
       if(g.shortestPath(finishInput, startInput).indexOf(arrOfCells[i][j].id) > -1) {
-        arrOfCells[i][j].setAttribute('style', 'border: 3px solid orange');
+        arrOfCells[i][j].setAttribute('style', 'border: 4px solid orange');
       };
       if(startInput == j + ' ' + i) {
-        arrOfCells[i][j].setAttribute('style', 'border: 3px solid yellow');
+        arrOfCells[i][j].setAttribute('style', 'border: 4px solid yellow');
       }
       if(finishInput == j + ' ' + i) {
         arrOfCells[i][j].setAttribute('style', 'border: 4px solid red');
