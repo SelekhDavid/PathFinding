@@ -1,0 +1,32 @@
+label {
+	line-height: 2;
+}
+h1 {
+	margin: 0;
+}
+h2 {
+	margin-top: 100px;
+	width: 300px;
+}
+.options {
+	width: 30%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 2% 4%;
+}
+.content {
+	position: absolute;
+	left: 30%;
+	top: 0;
+}
+.mode-title {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.citiesButtons {
+	margin-top: 20px;
+}
+.citiesButtons input {
+	margin-bottom: 10px; 
+}
