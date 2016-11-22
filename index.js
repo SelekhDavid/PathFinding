@@ -7,7 +7,6 @@ var g = new Graph();
 var totalTime = 0;
 
 var newElem=document.createElement('table');
-newElem.setAttribute('style', 'border: 4px solid black');
 
 var counterOfInput = true;
 
@@ -156,7 +155,8 @@ for (var i = 15; i > 0; i--) {
     newCell.setAttribute('height', '44');
     newCell.setAttribute('id', j + ' ' + i);
     newCell.setAttribute('onclick', 'getValue(this)');
-    newCell.setAttribute('style', 'border: 4px solid black');
+    newCell.setAttribute('oncontextmenu', 'showType(this)');
+    newCell.setAttribute('style', 'border: 4px solid #353535');
     if (arrOfTimes[i][j] == 3) {
     newCell.setAttribute('background', 'img/hill.png');
     } else
@@ -225,7 +225,7 @@ for (var i = 1; i < 16; i++) {
 function clear() {
   for (var i = 15; i > 0; i--) {
     for (var j = 14; j > 0; j--) {
-      arrOfCells[i][j].setAttribute('style', 'border: 4px solid black');
+      arrOfCells[i][j].setAttribute('style', 'border: 4px solid #353535');
   }
 }
 }
@@ -307,4 +307,37 @@ function set(start, finish) {
   startInput = start;
   finishInput = finish;
   showPath();
+}
+function cleanHalfSelected() {
+	counterOfInput = true;
+	clear();
+}
+document.getElementById('content').oncontextmenu = function (){return false};
+
+function showType(elem) {
+	var coordOfTarget = elem.id.split(' ');
+	var typeOfCell = '';
+	var typeIndex = arrOfTimes[coordOfTarget[1]][coordOfTarget[0]];
+	if (typeIndex == 0) {
+		typeOfCell = 'город';
+	} else
+	if (typeIndex == 1) {
+		typeOfCell = 'луг';
+	} else
+	if (typeIndex == 3) {
+		typeOfCell = 'холм';
+	} else
+	if (typeIndex == 4) {
+		typeOfCell = 'лес';
+	} else
+	if (typeIndex == 7) {
+		typeOfCell = 'болото';
+	} else
+	if (typeIndex == 8) {
+		typeOfCell = 'гора';
+	} else
+	if (typeIndex == inf) {
+		typeOfCell = 'озеро';
+	}
+  document.getElementById('timeOutput').innerHTML = 'Это ' + typeOfCell;
 }
