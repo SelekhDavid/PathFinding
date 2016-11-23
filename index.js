@@ -226,6 +226,7 @@ function clear() {
   for (var i = 15; i > 0; i--) {
     for (var j = 14; j > 0; j--) {
       arrOfCells[i][j].setAttribute('style', 'border: 4px solid #353535');
+      document.getElementById('timeOutput').innerHTML = '';
   }
 }
 }
