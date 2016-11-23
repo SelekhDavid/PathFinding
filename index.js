@@ -1,7 +1,7 @@
 'use strict';
 
 var startInput = 6 + ' ' + 9,
-  finishInput = 1 + ' ' + 1;
+  finishInput = 3 + ' ' + 15;
   
 var g = new Graph();
 var totalTime = 0;
