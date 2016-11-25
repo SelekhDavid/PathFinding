@@ -319,26 +319,36 @@ function showType(elem) {
 	var coordOfTarget = elem.id.split(' ');
 	var typeOfCell = '';
 	var typeIndex = arrOfTimes[coordOfTarget[1]][coordOfTarget[0]];
-	if (typeIndex == 0) {
+	var timeOfTypeOutput = 'идем ' + typeIndex;
+	switch (typeIndex) {
+		case 0:
 		typeOfCell = 'город';
-	} else
-	if (typeIndex == 1) {
+		timeOfTypeOutput = 'едем на метро';
+		break;
+		case 1:
 		typeOfCell = 'луг';
-	} else
-	if (typeIndex == 3) {
+		timeOfTypeOutput += ' час';
+		break;
+		case 3:
 		typeOfCell = 'холм';
-	} else
-	if (typeIndex == 4) {
+		timeOfTypeOutput += ' часа';
+		break;
+		case 4:
 		typeOfCell = 'лес';
-	} else
-	if (typeIndex == 7) {
+		timeOfTypeOutput += ' часа';
+		break;
+		case 7:
 		typeOfCell = 'болото';
-	} else
-	if (typeIndex == 8) {
+		timeOfTypeOutput += ' часов';
+		break;
+		case 8:
 		typeOfCell = 'гора';
-	} else
-	if (typeIndex == inf) {
+		timeOfTypeOutput += ' часов';
+		break;
+		default:
 		typeOfCell = 'озеро';
+		timeOfTypeOutput = 'лучше обойти';
+		break;
 	}
-  document.getElementById('timeOutput').innerHTML = 'Это ' + typeOfCell;
+  document.getElementById('timeOutput').innerHTML = 'Это ' + typeOfCell + '<br>' + timeOfTypeOutput;
 }
