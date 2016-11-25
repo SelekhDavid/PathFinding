@@ -323,7 +323,7 @@ function showType(elem) {
 	switch (typeIndex) {
 		case 0:
 		typeOfCell = 'город';
-		timeOfTypeOutput = 'едем на метро';
+		timeOfTypeOutput = 'едем на метро<br>0 часов';
 		break;
 		case 1:
 		typeOfCell = 'луг';
